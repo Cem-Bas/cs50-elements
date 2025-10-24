@@ -1,0 +1,19 @@
+/* Content styles for CS50 Elements */
+
+#cs50-element-overlay {
+    position: fixed !important;
+    pointer-events: none !important;
+    z-index: 2147483647 !important;
+    background: rgba(0, 122, 204, 0.3) !important;
+    border: 2px solid #007acc !important;
+    transition: all 0.1s ease !important;
+}
+
+/* Selection cursor */
+body.cs50-selecting {
+    cursor: crosshair !important;
+}
+
+body.cs50-selecting * {
+    cursor: crosshair !important;
+}

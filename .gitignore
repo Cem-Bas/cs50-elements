@@ -1,0 +1,32 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Node modules (if you add any dependencies later)
+node_modules/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Chrome extension private key (if generated)
+*.pem
+*.crx
+
+# Development/debug files
+*.log
+
+# Local configuration
+.claude/
