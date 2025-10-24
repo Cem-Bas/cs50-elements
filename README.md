@@ -72,6 +72,8 @@ To modify the extension:
 
 Developed by [cem-bas](https://github.com/cem-bas)
 
+Built with assistance from [Claude AI](https://claude.ai) by Anthropic
+
 Made with ❤️ for CS50
 
 ## License

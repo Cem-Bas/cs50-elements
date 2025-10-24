@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "CS50 Elements",
   "version": "1.0.0",
-  "description": "Inspect and analyze webpage elements with XPath, CSS selectors, and metadata",
+  "description": "Inspect and analyze webpage elements with XPath, CSS selectors, and metadata. Built with assistance from Claude AI.",
   "author": "cem-bas",
   "permissions": [
     "activeTab",

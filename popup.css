@@ -370,7 +370,8 @@ header h1 {
 }
 
 .about-features h3,
-.about-author h3 {
+.about-author h3,
+.about-credits h3 {
     font-size: 13px;
     font-weight: 600;
     color: #e7e7e7;
@@ -401,6 +402,26 @@ header h1 {
 /* Author Info */
 .about-author {
     margin-bottom: 24px;
+}
+
+.about-credits {
+    margin-bottom: 24px;
+}
+
+.credits-info {
+    color: #cccccc;
+    font-size: 13px;
+}
+
+.credits-info a {
+    color: #007acc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.credits-info a:hover {
+    color: #4fc3f7;
+    text-decoration: underline;
 }
 
 .author-info {

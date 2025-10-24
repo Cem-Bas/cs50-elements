@@ -1,5 +1,6 @@
 // CS50 Elements Content Script
 // Handles element selection, highlighting, and information extraction
+// Developed by cem-bas with assistance from Claude AI (Anthropic)
 
 let isSelecting = false;
 let highlightedElement = null;

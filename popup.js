@@ -1,5 +1,6 @@
 // CS50 Elements Popup Script
 // Handles UI interactions and communication with content script
+// Developed by cem-bas with assistance from Claude AI (Anthropic)
 
 let isScanning = false;
 
