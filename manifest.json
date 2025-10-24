@@ -3,7 +3,7 @@
   "name": "CS50 Elements",
   "version": "1.0.0",
   "description": "Inspect and analyze webpage elements with XPath, CSS selectors, and metadata",
-  "author": "cem.bas",
+  "author": "cem-bas",
   "permissions": [
     "activeTab",
     "storage"

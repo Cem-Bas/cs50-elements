@@ -78,7 +78,7 @@ To modify the extension:
 
 ## About
 
-Developed by [cem.bas](https://github.com/cem.bas)
+Developed by [cem-bas](https://github.com/cem-bas)
 
 Made with ❤️ for CS50
 
