@@ -9,8 +9,8 @@ body {
     width: 450px;
     min-height: 500px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #1e1e1e;
-    color: #d4d4d4;
+    background: #ffffff;
+    color: #333333;
     font-size: 13px;
     line-height: 1.5;
 }
@@ -23,15 +23,15 @@ body {
 
 /* Header */
 header {
-    background: #252526;
-    border-bottom: 1px solid #3c3c3c;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
     padding: 12px 16px 0;
 }
 
 header h1 {
     font-size: 14px;
     font-weight: 500;
-    color: #e7e7e7;
+    color: #212529;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -49,7 +49,7 @@ header h1 {
     background: transparent;
     border: none;
     border-bottom: 2px solid transparent;
-    color: #969696;
+    color: #6c757d;
     cursor: pointer;
     font-size: 12px;
     padding: 8px 16px;
@@ -59,12 +59,12 @@ header h1 {
 }
 
 .tab-button:hover {
-    color: #e7e7e7;
+    color: #495057;
 }
 
 .tab-button.active {
-    color: #e7e7e7;
-    border-bottom-color: #007acc;
+    color: #212529;
+    border-bottom-color: #0d6efd;
 }
 
 /* Tab Content */
@@ -96,9 +96,9 @@ header h1 {
 
 .btn {
     padding: 6px 12px;
-    border: 1px solid #3c3c3c;
-    background: #2d2d30;
-    color: #cccccc;
+    border: 1px solid #dee2e6;
+    background: #ffffff;
+    color: #495057;
     cursor: pointer;
     border-radius: 4px;
     font-size: 12px;
@@ -110,23 +110,23 @@ header h1 {
 }
 
 .btn:hover {
-    background: #3e3e42;
-    border-color: #464647;
+    background: #f8f9fa;
+    border-color: #adb5bd;
 }
 
 .btn-primary {
-    background: #0e639c;
-    border-color: #007acc;
+    background: #0d6efd;
+    border-color: #0d6efd;
     color: white;
 }
 
 .btn-primary:hover {
-    background: #1177bb;
+    background: #0b5ed7;
 }
 
 .btn-primary.active {
-    background: #007acc;
-    box-shadow: 0 0 0 1px #007acc;
+    background: #0a58ca;
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
 }
 
 .btn svg {
@@ -136,8 +136,8 @@ header h1 {
 
 /* Element Info */
 .element-info {
-    background: #252526;
-    border: 1px solid #3c3c3c;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
     border-radius: 4px;
     padding: 12px;
     max-height: 400px;
@@ -145,7 +145,7 @@ header h1 {
 }
 
 .placeholder {
-    color: #6a6a6a;
+    color: #6c757d;
     text-align: center;
     padding: 40px 20px;
     font-style: italic;
@@ -154,7 +154,7 @@ header h1 {
 .info-section h3 {
     font-size: 12px;
     font-weight: 600;
-    color: #e7e7e7;
+    color: #212529;
     margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -174,18 +174,19 @@ header h1 {
 
 .info-group label {
     font-size: 11px;
-    color: #969696;
+    color: #6c757d;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 600;
 }
 
 .info-value {
-    color: #cccccc;
+    color: #212529;
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     font-size: 12px;
     padding: 4px 8px;
-    background: #1e1e1e;
+    background: #ffffff;
+    border: 1px solid #e9ecef;
     border-radius: 3px;
     word-break: break-all;
     position: relative;
@@ -200,31 +201,31 @@ header h1 {
 
 .info-value code {
     flex: 1;
-    color: #ce9178;
+    color: #d63384;
 }
 
 /* Element Display */
 .tag-name {
-    color: #569cd6;
+    color: #0d6efd;
     font-weight: 600;
 }
 
 .element-id {
-    color: #9cdcfe;
+    color: #0dcaf0;
 }
 
 .element-id:before {
     content: '#';
-    color: #608b4e;
+    color: #198754;
 }
 
 .element-classes {
-    color: #d7ba7d;
+    color: #fd7e14;
 }
 
 .element-classes:before {
     content: '.';
-    color: #608b4e;
+    color: #198754;
 }
 
 /* Copy Button */
@@ -233,9 +234,9 @@ header h1 {
     right: 4px;
     top: 50%;
     transform: translateY(-50%);
-    background: #3c3c3c;
-    border: 1px solid #464647;
-    color: #969696;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #6c757d;
     cursor: pointer;
     padding: 4px;
     border-radius: 3px;
@@ -246,17 +247,35 @@ header h1 {
     justify-content: center;
 }
 
-.info-value:hover .copy-btn {
+.copy-all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 3px;
+    margin-left: 8px;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+.info-value:hover .copy-btn,
+.info-group:hover .copy-all-btn {
     opacity: 1;
 }
 
-.copy-btn:hover {
-    background: #464647;
-    color: #cccccc;
+.copy-btn:hover,
+.copy-all-btn:hover {
+    background: #e9ecef;
+    color: #495057;
 }
 
-.copy-btn.copied {
-    background: #0e639c;
+.copy-btn.copied,
+.copy-all-btn.copied {
+    background: #198754;
     color: white;
 }
 
@@ -265,7 +284,8 @@ header h1 {
 .attributes-container {
     max-height: 150px;
     overflow-y: auto;
-    background: #1e1e1e;
+    background: #ffffff;
+    border: 1px solid #e9ecef;
     border-radius: 3px;
     padding: 8px;
     margin-top: 4px;
@@ -280,7 +300,7 @@ header h1 {
 .attr-item {
     display: flex;
     padding: 2px 0;
-    border-bottom: 1px solid #2d2d30;
+    border-bottom: 1px solid #f8f9fa;
 }
 
 .style-item:last-child,
@@ -290,14 +310,14 @@ header h1 {
 
 .style-name,
 .attr-name {
-    color: #9cdcfe;
+    color: #0d6efd;
     margin-right: 8px;
     min-width: 120px;
 }
 
 .style-value,
 .attr-value {
-    color: #ce9178;
+    color: #d63384;
     flex: 1;
 }
 
@@ -306,9 +326,10 @@ header h1 {
     max-height: 100px;
     overflow-y: auto;
     padding: 8px;
-    background: #1e1e1e;
+    background: #ffffff;
+    border: 1px solid #e9ecef;
     border-radius: 3px;
-    color: #a9b7c6;
+    color: #495057;
     font-size: 12px;
     line-height: 1.4;
     word-wrap: break-word;
@@ -320,14 +341,14 @@ header h1 {
 }
 
 .about-content {
-    color: #d4d4d4;
+    color: #212529;
 }
 
 .about-header {
     text-align: center;
     margin-bottom: 24px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #3c3c3c;
+    border-bottom: 1px solid #dee2e6;
 }
 
 .logo {
@@ -336,7 +357,7 @@ header h1 {
     align-items: center;
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, #007acc, #0e639c);
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
     border-radius: 12px;
     margin-bottom: 12px;
 }
@@ -350,19 +371,19 @@ header h1 {
 .about-header h2 {
     font-size: 18px;
     font-weight: 600;
-    color: #e7e7e7;
+    color: #212529;
     margin-bottom: 4px;
 }
 
 .version {
-    color: #969696;
+    color: #6c757d;
     font-size: 12px;
 }
 
 .about-description {
     margin-bottom: 20px;
     line-height: 1.6;
-    color: #cccccc;
+    color: #495057;
 }
 
 .about-features {
@@ -374,7 +395,7 @@ header h1 {
 .about-credits h3 {
     font-size: 13px;
     font-weight: 600;
-    color: #e7e7e7;
+    color: #212529;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -389,14 +410,14 @@ header h1 {
     padding: 6px 0;
     padding-left: 20px;
     position: relative;
-    color: #cccccc;
+    color: #495057;
 }
 
 .about-features li:before {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #0e639c;
+    color: #198754;
 }
 
 /* Author Info */
@@ -409,18 +430,18 @@ header h1 {
 }
 
 .credits-info {
-    color: #cccccc;
+    color: #495057;
     font-size: 13px;
 }
 
 .credits-info a {
-    color: #007acc;
+    color: #0d6efd;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .credits-info a:hover {
-    color: #4fc3f7;
+    color: #0a58ca;
     text-decoration: underline;
 }
 
@@ -434,19 +455,19 @@ header h1 {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #cccccc;
+    color: #495057;
     text-decoration: none;
     padding: 8px 12px;
-    background: #2d2d30;
+    background: #f8f9fa;
     border-radius: 6px;
     transition: all 0.2s ease;
-    border: 1px solid #3c3c3c;
+    border: 1px solid #dee2e6;
 }
 
 .github-link:hover {
-    background: #3e3e42;
-    color: #e7e7e7;
-    border-color: #007acc;
+    background: #e9ecef;
+    color: #212529;
+    border-color: #0d6efd;
 }
 
 .github-link svg {
@@ -457,8 +478,8 @@ header h1 {
 .about-footer {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid #3c3c3c;
-    color: #969696;
+    border-top: 1px solid #dee2e6;
+    color: #6c757d;
     font-size: 12px;
 }
 
@@ -469,16 +490,16 @@ header h1 {
 }
 
 ::-webkit-scrollbar-track {
-    background: #1e1e1e;
+    background: #f8f9fa;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #464647;
+    background: #adb5bd;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #5a5a5a;
+    background: #868e96;
 }
 
 /* Loading State */

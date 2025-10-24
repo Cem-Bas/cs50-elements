@@ -39,10 +39,18 @@
                         <!-- Element Tag Info -->
                         <div class="info-group">
                             <label>Element:</label>
-                            <div class="info-value">
-                                <span id="tagName" class="tag-name"></span>
-                                <span id="elementId" class="element-id"></span>
-                                <span id="elementClasses" class="element-classes"></span>
+                            <div class="info-value code">
+                                <span>
+                                    <span id="tagName" class="tag-name"></span>
+                                    <span id="elementId" class="element-id"></span>
+                                    <span id="elementClasses" class="element-classes"></span>
+                                </span>
+                                <button class="copy-btn" data-copy="elementInfo" title="Copy Element Info">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
 
@@ -77,22 +85,41 @@
                         <!-- Dimensions -->
                         <div class="info-group">
                             <label>Dimensions:</label>
-                            <div class="info-value">
+                            <div class="info-value code">
                                 <span id="dimensions"></span>
+                                <button class="copy-btn" data-copy="dimensions" title="Copy Dimensions">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
 
                         <!-- Position -->
                         <div class="info-group">
                             <label>Position:</label>
-                            <div class="info-value">
+                            <div class="info-value code">
                                 <span id="position"></span>
+                                <button class="copy-btn" data-copy="position" title="Copy Position">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
 
                         <!-- Computed Styles -->
                         <div class="info-group">
-                            <label>Computed Styles:</label>
+                            <label>Computed Styles:
+                                <button class="copy-all-btn" data-copy="computedStyles" title="Copy All Styles">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
+                            </label>
                             <div class="styles-container">
                                 <div id="computedStyles" class="computed-styles"></div>
                             </div>
@@ -100,7 +127,14 @@
 
                         <!-- Attributes -->
                         <div class="info-group">
-                            <label>Attributes:</label>
+                            <label>Attributes:
+                                <button class="copy-all-btn" data-copy="attributes" title="Copy All Attributes">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
+                            </label>
                             <div class="attributes-container">
                                 <div id="attributes" class="attributes"></div>
                             </div>
@@ -109,8 +143,14 @@
                         <!-- Text Content -->
                         <div class="info-group">
                             <label>Text Content:</label>
-                            <div class="info-value">
+                            <div class="info-value code">
                                 <div id="textContent" class="text-content"></div>
+                                <button class="copy-btn" data-copy="textContent" title="Copy Text Content">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -131,7 +171,7 @@
                             </svg>
                         </div>
                         <h2>CS50 Elements</h2>
-                        <p class="version">Version 1.0.0</p>
+                        <p class="version">Version 1.1.0</p>
                     </div>
 
                     <div class="about-description">

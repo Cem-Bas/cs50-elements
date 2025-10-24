@@ -1,6 +1,10 @@
-# CS50 Elements - Chrome Extension
+# CS50 Elements
+#### Video Demo:  <URL HERE>
+#### Description:
 
-A powerful Chrome extension for inspecting and analyzing webpage elements. Get detailed information about any element including XPath, CSS selectors, computed styles, and more.
+CS50 Elements is a powerful Chrome extension for inspecting and analyzing webpage elements. This extension provides developers, testers, and web enthusiasts with a comprehensive tool to extract detailed information about any element on a webpage, including XPath selectors, CSS selectors, computed styles, attributes, and more. Built as my final project for CS50, it demonstrates modern Chrome extension development using Manifest V3, featuring a clean light-themed interface that provides instant feedback and precise element selection capabilities.
+
+---
 
 <p align="center">
   <img src="https://img.shields.io/badge/Version-1.1.0-blue" alt="Version">
@@ -41,7 +45,7 @@ A powerful Chrome extension for inspecting and analyzing webpage elements. Get d
 - 📏 **Dimensions & Position** - Exact pixel dimensions and position
 - 📝 **Text Content** - View element text content
 - 📋 **Copy Support** - One-click copy for selectors
-- 🌙 **Dark Theme UI** - Professional interface matching Chrome DevTools
+- ☀️ **Light Theme UI** - Clean, professional interface with excellent readability
 
 ### Technical Specifications
 - **Manifest Version**: 3 (latest)

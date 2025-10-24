@@ -221,17 +221,24 @@ function displayElementInfo(data) {
 
     // Store data for copy functionality
     window.elementData = data;
+
+    // Reinitialize copy buttons for dynamically added content
+    initializeCopyButtons();
 }
 
 // Initialize copy buttons
 function initializeCopyButtons() {
-    const copyButtons = document.querySelectorAll('.copy-btn');
+    const copyButtons = document.querySelectorAll('.copy-btn, .copy-all-btn');
 
     copyButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
+        // Remove any existing listeners to prevent duplicates
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+
+        newButton.addEventListener('click', (e) => {
             e.preventDefault();
-            const field = button.getAttribute('data-copy');
-            copyToClipboard(field, button);
+            const field = newButton.getAttribute('data-copy');
+            copyToClipboard(field, newButton);
         });
     });
 }
@@ -240,7 +247,55 @@ function initializeCopyButtons() {
 async function copyToClipboard(field, button) {
     if (!window.elementData) return;
 
-    const value = window.elementData[field];
+    let value = '';
+
+    // Handle different fields
+    switch(field) {
+        case 'elementInfo':
+            value = window.elementData.tagName;
+            if (window.elementData.id) {
+                value += `#${window.elementData.id}`;
+            }
+            if (window.elementData.className) {
+                const classes = window.elementData.className.split(' ').filter(c => c).join('.');
+                if (classes) value += `.${classes}`;
+            }
+            break;
+
+        case 'dimensions':
+            value = `${window.elementData.dimensions.width}px × ${window.elementData.dimensions.height}px`;
+            break;
+
+        case 'position':
+            value = `top: ${window.elementData.position.top}px, left: ${window.elementData.position.left}px`;
+            break;
+
+        case 'computedStyles':
+            if (window.elementData.styles && Object.keys(window.elementData.styles).length > 0) {
+                value = Object.entries(window.elementData.styles)
+                    .map(([name, val]) => `${name}: ${val}`)
+                    .join('\n');
+            }
+            break;
+
+        case 'attributes':
+            if (window.elementData.attributes && Object.keys(window.elementData.attributes).length > 0) {
+                value = Object.entries(window.elementData.attributes)
+                    .map(([name, val]) => `${name}="${val}"`)
+                    .join('\n');
+            }
+            break;
+
+        case 'textContent':
+            const textEl = document.getElementById('textContent');
+            value = textEl ? textEl.textContent.trim() : window.elementData.textContent || '';
+            break;
+
+        default:
+            // For xpath and cssSelector
+            value = window.elementData[field];
+    }
+
     if (!value) return;
 
     try {
