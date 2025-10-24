@@ -3,7 +3,7 @@
 A powerful Chrome extension for inspecting and analyzing webpage elements. Get detailed information about any element including XPath, CSS selectors, computed styles, and more.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-1.0.0-blue" alt="Version">
+  <img src="https://img.shields.io/badge/Version-1.1.0-blue" alt="Version">
   <img src="https://img.shields.io/badge/Chrome-88%2B-green" alt="Chrome">
   <img src="https://img.shields.io/badge/Manifest-V3-orange" alt="Manifest">
   <img src="https://img.shields.io/badge/License-MIT-lightgrey" alt="License">
@@ -196,6 +196,13 @@ zip -r cs50-elements.zip . -x "*.git*" "*.md" "test-*"
 - **Open Source** - Full code transparency
 
 ## 📊 Version History
+
+- **v1.1.0** (October 24, 2024) - Improved UX
+  - Popup minimizes when scanning starts
+  - Popup reopens automatically when element is selected
+  - Fixed all connection errors
+  - Better error handling
+  - Consolidated documentation
 
 - **v1.0.0** (October 24, 2024) - Initial release
   - Core element inspection functionality
