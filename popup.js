@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeButtons();
     initializeCopyButtons();
     setupMessageListener();
+
+    // Check if we have selected element data waiting
+    chrome.runtime.sendMessage({ action: 'getSelectedElement' }, (response) => {
+        if (response && response.data) {
+            displayElementInfo(response.data);
+        }
+    });
 });
 
 // Tab functionality
@@ -94,8 +101,8 @@ async function toggleScanning() {
                 Stop Scanning
             `;
 
-            // Close popup to allow selection on page
-            window.close();
+            // Keep popup open to receive element data
+            // The popup will display the data when an element is selected
         });
     } else {
         // Stop scanning
