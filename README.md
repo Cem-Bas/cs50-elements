@@ -16,20 +16,13 @@ A powerful Chrome extension for inspecting and analyzing webpage elements. Get d
 
 ## Installation
 
-1. **Generate Icons**:
-   - Open `icon-generator.html` in your browser
-   - Download each icon and save them in the `icons/` folder as:
-     - `icon16.png`
-     - `icon48.png`
-     - `icon128.png`
-
-2. **Load the Extension in Chrome**:
+1. **Load the Extension in Chrome**:
    - Open Chrome and navigate to `chrome://extensions/`
    - Enable "Developer mode" (toggle in top right)
    - Click "Load unpacked"
    - Select the project folder containing `manifest.json`
 
-3. **Pin the Extension**:
+2. **Pin the Extension**:
    - Click the puzzle piece icon in Chrome toolbar
    - Find "CS50 Elements" and click the pin icon
 
@@ -59,7 +52,6 @@ project/
 ├── popup.js              # Popup logic
 ├── content.js            # Content script for element selection
 ├── content-styles.css    # Styles for element highlighting
-├── icon-generator.html   # Tool to generate icons
 ├── icons/               # Extension icons
 │   ├── icon16.png
 │   ├── icon48.png
