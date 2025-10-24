@@ -274,6 +274,13 @@ function setupMessageListener() {
 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     if (tabs[0]) {
         chrome.tabs.sendMessage(tabs[0].id, { action: 'getStatus' }, (response) => {
+            // Check for errors silently - it's okay if content script isn't loaded yet
+            if (chrome.runtime.lastError) {
+                // Content script not loaded on this page, which is fine
+                console.log('Content script not loaded on this page yet');
+                return;
+            }
+
             if (response && response.isScanning) {
                 isScanning = true;
                 const scanBtn = document.getElementById('scanBtn');

@@ -283,6 +283,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     } else if (request.action === 'stopSelection') {
         stopSelection();
         sendResponse({ status: 'stopped' });
+    } else if (request.action === 'getStatus') {
+        // Return current selection status
+        sendResponse({ isScanning: isSelecting });
     }
     return true;
 });
