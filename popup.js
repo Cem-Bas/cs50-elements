@@ -101,8 +101,10 @@ async function toggleScanning() {
                 Stop Scanning
             `;
 
-            // Keep popup open to receive element data
-            // The popup will display the data when an element is selected
+            // Close popup to allow element selection on page
+            setTimeout(() => {
+                window.close();
+            }, 100);
         });
     } else {
         // Stop scanning

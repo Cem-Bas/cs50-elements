@@ -10,14 +10,28 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         // Store the selected element data
         selectedElementData = request.data;
 
-        // Forward the message to all extension pages (including popup)
-        chrome.runtime.sendMessage({
-            action: 'elementSelected',
-            data: request.data
-        }).catch(() => {
-            // Popup might not be open yet, store for later retrieval
-            console.log('Popup not available, data stored for later');
-        });
+        // Try to open the popup to display the element data
+        // Note: chrome.action.openPopup() requires Chrome 99+
+        if (chrome.action && chrome.action.openPopup) {
+            chrome.action.openPopup().then(() => {
+                console.log('Popup opened to display element data');
+            }).catch((err) => {
+                console.log('Could not open popup:', err);
+                // As fallback, show a badge to notify user
+                chrome.action.setBadgeText({ text: '!' });
+                chrome.action.setBadgeBackgroundColor({ color: '#007acc' });
+                setTimeout(() => {
+                    chrome.action.setBadgeText({ text: '' });
+                }, 3000);
+            });
+        } else {
+            // Fallback for older Chrome versions - show badge
+            chrome.action.setBadgeText({ text: '!' });
+            chrome.action.setBadgeBackgroundColor({ color: '#007acc' });
+            setTimeout(() => {
+                chrome.action.setBadgeText({ text: '' });
+            }, 3000);
+        }
 
         sendResponse({ status: 'received' });
     } else if (request.action === 'getSelectedElement') {
