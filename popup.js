@@ -49,10 +49,39 @@ async function toggleScanning() {
         // Start scanning
         const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
+        // Check if this is a restricted URL
+        if (!tab.url || tab.url.startsWith('chrome://') || tab.url.startsWith('chrome-extension://') ||
+            tab.url.startsWith('edge://') || tab.url.startsWith('about:')) {
+            showError('Cannot inspect elements on browser internal pages. Please navigate to a regular website.');
+            return;
+        }
+
+        // First, inject the content script and CSS if not already present
+        try {
+            // Inject CSS
+            await chrome.scripting.insertCSS({
+                target: { tabId: tab.id },
+                files: ['content-styles.css']
+            });
+
+            // Inject JavaScript
+            await chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                files: ['content.js']
+            });
+
+            // Small delay to ensure script is loaded
+            await new Promise(resolve => setTimeout(resolve, 100));
+        } catch (error) {
+            // Script might already be injected, continue
+            console.log('Script might already be injected:', error);
+        }
+
+        // Now send the message to start selection
         chrome.tabs.sendMessage(tab.id, { action: 'startSelection' }, (response) => {
             if (chrome.runtime.lastError) {
                 console.error('Error starting selection:', chrome.runtime.lastError);
-                showError('Could not start element selection. Please refresh the page and try again.');
+                showError('Could not start element selection. Please try again.');
                 return;
             }
 
@@ -271,27 +300,4 @@ function setupMessageListener() {
 }
 
 // Check if we're already in scanning mode when popup opens
-chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    if (tabs[0]) {
-        chrome.tabs.sendMessage(tabs[0].id, { action: 'getStatus' }, (response) => {
-            // Check for errors silently - it's okay if content script isn't loaded yet
-            if (chrome.runtime.lastError) {
-                // Content script not loaded on this page, which is fine
-                console.log('Content script not loaded on this page yet');
-                return;
-            }
-
-            if (response && response.isScanning) {
-                isScanning = true;
-                const scanBtn = document.getElementById('scanBtn');
-                scanBtn.classList.add('active');
-                scanBtn.innerHTML = `
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="6" y="6" width="12" height="12" rx="2"/>
-                    </svg>
-                    Stop Scanning
-                `;
-            }
-        });
-    }
-});
+// We no longer check on load since content script is injected on demand
