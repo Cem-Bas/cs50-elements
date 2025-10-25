@@ -1,5 +1,5 @@
 # CS50 Elements
-#### Video Demo:  <URL HERE>
+#### Video Demo:  https://youtu.be/foA_xDbWcDE
 #### Description:
 
 CS50 Elements is a powerful Chrome extension for inspecting and analyzing webpage elements. This extension provides developers, testers, and web enthusiasts with a comprehensive tool to extract detailed information about any element on a webpage, including XPath selectors, CSS selectors, computed styles, attributes, and more. Built as my final project for CS50, it demonstrates modern Chrome extension development using Manifest V3, featuring a clean light-themed interface that provides instant feedback and precise element selection capabilities.
