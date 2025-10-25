@@ -2,9 +2,13 @@
 // Handles element selection, highlighting, and information extraction
 // Developed by cem-bas with assistance from Claude AI (Anthropic)
 
-let isSelecting = false;
-let highlightedElement = null;
-let overlayElement = null;
+// Check if already initialized to prevent duplicate declaration errors
+if (typeof window.CS50ElementsInitialized === 'undefined') {
+    window.CS50ElementsInitialized = true;
+
+    let isSelecting = false;
+    let highlightedElement = null;
+    let overlayElement = null;
 
 // Create highlight overlay element
 function createOverlay() {
@@ -289,3 +293,5 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
     return true;
 });
+
+} // End of initialization check

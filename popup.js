@@ -63,25 +63,33 @@ async function toggleScanning() {
             return;
         }
 
-        // First, inject the content script and CSS if not already present
+        // First, check if content script is already injected
         try {
-            // Inject CSS
-            await chrome.scripting.insertCSS({
-                target: { tabId: tab.id },
-                files: ['content-styles.css']
-            });
-
-            // Inject JavaScript
-            await chrome.scripting.executeScript({
-                target: { tabId: tab.id },
-                files: ['content.js']
-            });
-
-            // Small delay to ensure script is loaded
-            await new Promise(resolve => setTimeout(resolve, 100));
+            const response = await chrome.tabs.sendMessage(tab.id, { action: 'getStatus' });
+            console.log('Content script already loaded');
         } catch (error) {
-            // Script might already be injected, continue
-            console.log('Script might already be injected:', error);
+            // Content script not loaded, inject it now
+            console.log('Injecting content script...');
+            try {
+                // Inject CSS
+                await chrome.scripting.insertCSS({
+                    target: { tabId: tab.id },
+                    files: ['content-styles.css']
+                });
+
+                // Inject JavaScript
+                await chrome.scripting.executeScript({
+                    target: { tabId: tab.id },
+                    files: ['content.js']
+                });
+
+                // Small delay to ensure script is loaded
+                await new Promise(resolve => setTimeout(resolve, 100));
+            } catch (injectError) {
+                console.error('Failed to inject scripts:', injectError);
+                showError('Failed to initialize element selection. Please refresh the page and try again.');
+                return;
+            }
         }
 
         // Now send the message to start selection
